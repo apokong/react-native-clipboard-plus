@@ -12,7 +12,7 @@ class ClipboardPlusModule(reactContext: ReactApplicationContext) : ReactContextB
     }
 
     @ReactMethod
-    fun copyImage(base64: String, uri: String, promise: Promise) {
+    fun copyImage(base64: String, url: String, promise: Promise) {
       promise.resolve(null)
     }
     @ReactMethod

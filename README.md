@@ -1,11 +1,12 @@
 # react-native-clipboard-plus
 
-React Native module for copy and paste image with Native Clipboard
+React Native module for copy and paste image with Native Clipboard (currently iOS only)
 
 ## Installation
 
 ```sh
-npm install react-native-clipboard-plus
+yarn add react-native-clipboard-plus
+npx pod-install
 ```
 
 ## Usage
@@ -13,9 +14,11 @@ npm install react-native-clipboard-plus
 ```js
 import ClipboardPlus from "react-native-clipboard-plus";
 
-// ...
+// Paste string and/or images from Native Clipboard
+const pasteResult = await ClipboardPlus.paste();
 
-const result = await ClipboardPlus.multiply(3, 7);
+// Copy base64 string into Native Clipboard (**in progress**)
+const copyResult = await ClipboardPlus.copyImage(base64, url);
 ```
 
 ## Contributing

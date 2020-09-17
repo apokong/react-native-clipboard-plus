@@ -1,9 +1,9 @@
 package com.reactnativeclipboardplus
 
+import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
 
 class ClipboardPlusModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
@@ -11,14 +11,12 @@ class ClipboardPlusModule(reactContext: ReactApplicationContext) : ReactContextB
         return "ClipboardPlus"
     }
 
-    // Example method
-    // See https://facebook.github.io/react-native/docs/native-modules-android
     @ReactMethod
-    fun multiply(a: Int, b: Int, promise: Promise) {
-    
-      promise.resolve(a * b)
-    
+    fun copyImage(base64: String, uri: String, promise: Promise) {
+      promise.resolve(null)
     }
-
-    
+    @ReactMethod
+    fun paste(promise: Promise) {
+      promise.resolve(null)
+    }
 }

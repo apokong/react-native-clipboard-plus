@@ -6,7 +6,7 @@ export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
 
   React.useEffect(() => {
-    ClipboardPlus.multiply(3, 7).then(setResult);
+    // ClipboardPlus.multiply(3, 7).then(setResult);
   }, []);
 
   return (

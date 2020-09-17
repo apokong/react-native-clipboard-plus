@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-// import ClipboardPlus from 'react-native-clipboard-plus';
+import ClipboardPlus from 'react-native-clipboard-plus';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result, setResult] = React.useState<string | undefined>();
 
   React.useEffect(() => {
     setResult(undefined);
-    // ClipboardPlus.multiply(3, 7).then(setResult);
+    ClipboardPlus.paste().then((data) => {
+      console.log(JSON.stringify(data));
+      setResult('Received paste data!');
+    });
   }, []);
 
   return (

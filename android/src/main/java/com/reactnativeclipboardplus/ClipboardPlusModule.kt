@@ -13,10 +13,12 @@ class ClipboardPlusModule(reactContext: ReactApplicationContext) : ReactContextB
 
     @ReactMethod
     fun copyImage(base64: String, url: String, promise: Promise) {
-      promise.resolve(null)
+      // promise.resolve(result)
+      promise.reject("copyImage function doesn't exist in Android")
     }
     @ReactMethod
     fun paste(promise: Promise) {
-      promise.resolve(null)
+      // promise.resolve(result)
+      promise.reject("paste function doesn't exist in Android")
     }
 }

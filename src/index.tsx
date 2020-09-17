@@ -1,7 +1,12 @@
 import { NativeModules } from 'react-native';
 
+type ClipboardPlusPasteboardData = {
+  string: string;
+  image: string;
+};
 type ClipboardPlusType = {
-  multiply(a: number, b: number): Promise<number>;
+  copyImage(base64: string, url: string): Promise<ClipboardPlusPasteboardData>;
+  paste(): Promise<ClipboardPlusPasteboardData>;
 };
 
 const { ClipboardPlus } = NativeModules;

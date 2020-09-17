@@ -1,6 +1,6 @@
 {
   "name": "react-native-clipboard-plus",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "React Native module for copy and paste image with Native Clipboard",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

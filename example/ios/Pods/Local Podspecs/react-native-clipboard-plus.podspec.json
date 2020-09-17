@@ -1,0 +1,21 @@
+{
+  "name": "react-native-clipboard-plus",
+  "version": "0.1.0",
+  "summary": "React Native module for copy and paste image with Native Clipboard",
+  "homepage": "https://github.com/apokong/react-native-clipboard-plus#readme",
+  "license": "MIT",
+  "authors": "Apo Kong <apokong@gmail.com> (https://github.com/apokong)",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/apokong/react-native-clipboard-plus.git",
+    "tag": "0.1.0"
+  },
+  "source_files": "ios/**/*.{h,m,mm,swift}",
+  "dependencies": {
+    "React": [
+
+    ]
+  }
+}

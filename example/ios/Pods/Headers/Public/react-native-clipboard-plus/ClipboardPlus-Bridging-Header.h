@@ -1,0 +1,1 @@
+../../../../../../ios/ClipboardPlus-Bridging-Header.h

@@ -1,0 +1,1 @@
+../../../Target Support Files/react-native-clipboard-plus/react-native-clipboard-plus-umbrella.h

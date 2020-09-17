@@ -1,0 +1,6 @@
+module react_native_clipboard_plus {
+  umbrella header "react-native-clipboard-plus-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -13,10 +13,10 @@ class ClipboardPlusModule(reactContext: ReactApplicationContext) : ReactContextB
 
     @ReactMethod
     fun copyImage(base64: String, url: String, promise: Promise) {
-      promise.resolve(null)
+      promise.resolve({})
     }
     @ReactMethod
     fun paste(promise: Promise) {
-      promise.resolve(null)
+      promise.resolve({})
     }
 }

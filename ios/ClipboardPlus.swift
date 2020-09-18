@@ -3,11 +3,8 @@ class ClipboardPlus: NSObject {
 
     @objc(clearAll:withRejecter:)
     func clearAll(resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        // let pasteboard = UIPasteboard.general
-        // let changeCount = UIPasteboard.clearContents()
         UIPasteboard.general.items = []
         var result : NSMutableDictionary = [:]
-        // result["changeCount"] = changeCount
         resolve(result)
     }
 
@@ -16,7 +13,7 @@ class ClipboardPlus: NSObject {
         let pasteboard = UIPasteboard.general
         if let decodedImageData = Data(base64Encoded: base64, options: .ignoreUnknownCharacters) {
             if (url != nil) {
-                pasteboard.string = url
+                pasteboard.string = result["string"] = url
             }
             pasteboard.image = UIImage(data: decodedImageData)
             var result : NSMutableDictionary = [:]
@@ -31,7 +28,6 @@ class ClipboardPlus: NSObject {
     func paste(resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         let pasteboard = UIPasteboard.general
         var result : NSMutableDictionary = [:]
-        result["changeCount"] = pasteboard.changeCount
         if let stringData : String = pasteboard.string {
             result["string"] = stringData
         }        
@@ -47,6 +43,7 @@ class ClipboardPlus: NSObject {
                 }
             }
         }
+        result["changeCount"] = pasteboard.changeCount
         resolve(result)
     }
 }

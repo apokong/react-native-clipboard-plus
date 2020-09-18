@@ -5,6 +5,7 @@ class ClipboardPlus: NSObject {
     func clearAll(resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         UIPasteboard.general.items = []
         let result : NSMutableDictionary = [:]
+        result["changeCount"] = UIPasteboard.general.changeCount
         resolve(result)
     }
 
@@ -14,6 +15,7 @@ class ClipboardPlus: NSObject {
         let pasteboard = UIPasteboard.general
         pasteboard.string = text
         result["string"] = text
+        result["changeCount"] = pasteboard.changeCount
         resolve(result)
     }
 
@@ -24,6 +26,7 @@ class ClipboardPlus: NSObject {
             pasteboard.image = UIImage(data: decodedImageData)
             var result : NSMutableDictionary = [:]
             result["image"] = base64
+            result["changeCount"] = pasteboard.changeCount
             resolve(result)
         } else {
             reject("DecodeErr", "Decode image data fail", nil)

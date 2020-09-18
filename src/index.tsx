@@ -7,7 +7,8 @@ type ClipboardPlusPasteboardData = {
 };
 type ClipboardPlusType = {
   clearAll(): Promise<ClipboardPlusPasteboardData | undefined>;
-  copyImage(base64: string, url: string): Promise<ClipboardPlusPasteboardData>;
+  copyText(text: string): Promise<ClipboardPlusPasteboardData>;
+  copyImage(base64: string): Promise<ClipboardPlusPasteboardData>;
   paste(): Promise<ClipboardPlusPasteboardData>;
 };
 

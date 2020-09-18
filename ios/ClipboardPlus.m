@@ -5,7 +5,11 @@
 RCT_EXTERN_METHOD(clearAll:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 
-RCT_EXTERN_METHOD(copyImage:(NSString *)base64 url:(NSString *)url
+RCT_EXTERN_METHOD(copyText:(NSString *)text
+                withResolver:(RCTPromiseResolveBlock)resolve
+                withRejecter:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(copyImage:(NSString *)base64
                 withResolver:(RCTPromiseResolveBlock)resolve
                 withRejecter:(RCTPromiseRejectBlock)reject)
 

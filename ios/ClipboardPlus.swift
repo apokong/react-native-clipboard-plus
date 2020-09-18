@@ -4,17 +4,23 @@ class ClipboardPlus: NSObject {
     @objc(clearAll:withRejecter:)
     func clearAll(resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         UIPasteboard.general.items = []
-        var result : NSMutableDictionary = [:]
+        let result : NSMutableDictionary = [:]
         resolve(result)
     }
 
-    @objc(copyImage:url:withResolver:withRejecter:)
-    func copyImage(base64:String,url:String,resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+    @objc(copyText:withResolver:withRejecter:)
+    func copyText(text:String,resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+        var result : NSMutableDictionary = [:]
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = text
+        result["string"] = text
+        resolve(result)
+    }
+
+    @objc(copyImage:withResolver:withRejecter:)
+    func copyImage(base64:String,resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
         let pasteboard = UIPasteboard.general
         if let decodedImageData = Data(base64Encoded: base64, options: .ignoreUnknownCharacters) {
-            if (url != nil) {
-                pasteboard.string = result["string"] = url
-            }
             pasteboard.image = UIImage(data: decodedImageData)
             var result : NSMutableDictionary = [:]
             result["image"] = base64

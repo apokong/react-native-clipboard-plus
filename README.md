@@ -17,6 +17,9 @@ import ClipboardPlus from "react-native-clipboard-plus";
 // Paste string and/or images from Native Clipboard
 const pasteResult = await ClipboardPlus.paste();
 
+// Clear contents from Native Clipboard
+await ClipboardPlus.clearAll();
+
 // Copy base64 string into Native Clipboard (**in progress**)
 const copyResult = await ClipboardPlus.copyImage(base64, url);
 ```

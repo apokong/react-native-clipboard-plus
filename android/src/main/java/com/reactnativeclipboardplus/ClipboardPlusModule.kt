@@ -29,7 +29,11 @@ class ClipboardPlusModule(reactContext: ReactApplicationContext) : ReactContextB
       promise.reject("copyText function doesn't exist in Android")
     }
     @ReactMethod
-    fun copyImage(base64: String, promise: Promise) {
+    fun copyUrl(url: String, promise: Promise) {
+      promise.reject("copyUrl function doesn't exist in Android")
+    }
+    @ReactMethod
+    fun copyImage(base64: String, uri: String, promise: Promise) {
       promise.reject("copyImage function doesn't exist in Android")
     }
 

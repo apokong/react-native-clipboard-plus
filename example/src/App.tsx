@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Dimensions,
   ScrollView,
+  Platform,
 } from 'react-native';
 import ClipboardPlus from 'react-native-clipboard-plus';
 import tempData from './tempData';
@@ -48,6 +49,14 @@ export default function App() {
     setPasteUrl(url);
     setPasteImage(image);
   };
+
+  if (Platform.OS !== 'ios') {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Text>Currently only support iOS</Text>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.container}>

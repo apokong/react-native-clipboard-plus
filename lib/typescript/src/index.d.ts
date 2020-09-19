@@ -8,7 +8,7 @@ declare type ClipboardPlusType = {
     clearAll(): Promise<ClipboardPlusPasteboardData | undefined>;
     copyText(text: string): Promise<ClipboardPlusPasteboardData>;
     copyUrl(url: string): Promise<ClipboardPlusPasteboardData>;
-    copyImage(base64: string, uri?: string): Promise<ClipboardPlusPasteboardData>;
+    copyImage(base64: string, uri: string | undefined): Promise<ClipboardPlusPasteboardData>;
     paste(): Promise<ClipboardPlusPasteboardData>;
 };
 declare const _default: ClipboardPlusType;

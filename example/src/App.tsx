@@ -11,23 +11,22 @@ import {
   ScrollView,
   Platform,
 } from 'react-native';
-import styled from 'styled-components';
+
 import ClipboardPlus from 'react-native-clipboard-plus';
 import tempData from './tempData';
 
-const ButtonContainer = styled(TouchableOpacity)`
-  opacity: ${({ disabled }: any) => (disabled ? 0.5 : 1)};
-`;
-
 const Button = ({ disabled, title, onPress }: any) => {
+  const buttonOpacity = StyleSheet.flatten({
+    opacity: disabled ? 0.5 : 1,
+  });
   return (
-    <ButtonContainer
+    <TouchableOpacity
       disabled={disabled}
-      style={styles.buttonContainer}
+      style={[styles.buttonContainer, buttonOpacity]}
       onPress={onPress}
     >
       <Text style={styles.buttonTitle}>{title}</Text>
-    </ButtonContainer>
+    </TouchableOpacity>
   );
 };
 

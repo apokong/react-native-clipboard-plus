@@ -30,6 +30,17 @@ const copyResult = await ClipboardPlus.copyUrl('https://www.google.com/');
 const copyResult = await ClipboardPlus.copyImage(base64, uri);
 ```
 
+## Example
+
+Open folder [example](./example). Run commands and see the example demo
+```sh
+cd example
+yarn install
+yarn ios
+```
+![](./example/assets/example_ios.gif)
+
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.

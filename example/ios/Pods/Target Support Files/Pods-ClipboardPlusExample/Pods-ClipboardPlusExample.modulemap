@@ -1,6 +1,0 @@
-module Pods_ClipboardPlusExample {
-  umbrella header "Pods-ClipboardPlusExample-umbrella.h"
-
-  export *
-  module * { export * }
-}

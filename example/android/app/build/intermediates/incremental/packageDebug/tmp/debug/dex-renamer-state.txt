@@ -1,4 +1,4 @@
-#Fri Sep 18 09:48:23 HKT 2020
-base.0=/Users/apokong/Documents/react-native-clipboard-plus/example/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Tue Sep 22 23:55:16 HKT 2020
+base.0=/Users/apokong/Documents/react-native-clipboard-plus-master/example/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

@@ -11,23 +11,23 @@ import {
   ScrollView,
   Platform,
 } from 'react-native';
+import styled from 'styled-components';
 import ClipboardPlus from 'react-native-clipboard-plus';
 import tempData from './tempData';
 
+const ButtonContainer = styled(TouchableOpacity)`
+  opacity: ${({ disabled }: any) => (disabled ? 0.5 : 1)};
+`;
+
 const Button = ({ disabled, title, onPress }: any) => {
   return (
-    <TouchableOpacity
+    <ButtonContainer
       disabled={disabled}
-      style={[
-        styles.buttonContainer,
-        {
-          opacity: disabled ? 0.5 : 1,
-        },
-      ]}
+      style={styles.buttonContainer}
       onPress={onPress}
     >
       <Text style={styles.buttonTitle}>{title}</Text>
-    </TouchableOpacity>
+    </ButtonContainer>
   );
 };
 
@@ -43,7 +43,6 @@ export default function App() {
 
   const pasteData = async () => {
     let { string, url, image, changeCount } = await ClipboardPlus.paste();
-    console.log('image!!!', image);
     setChangecount(changeCount);
     setPasteString(string);
     setPasteUrl(url);
@@ -61,28 +60,12 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
-        style={{
-          flex: 1,
-        }}
+        style={styles.container}
         contentContainerStyle={styles.contentContainer}
       >
-        <View
-          style={{
-            width: '100%',
-            paddingVertical: 20,
-            paddingHorizontal: 20,
-            alignItems: 'flex-start',
-          }}
-        >
+        <View style={styles.upperContentContainer}>
           <TextInput
-            style={{
-              width: '100%',
-              minHeight: 80,
-              backgroundColor: '#EEEEEE',
-              borderRadius: 10,
-              padding: 10,
-              fontSize: 13,
-            }}
+            style={styles.textinput}
             placeholder="Text to be copied"
             value={textinput}
             multiline
@@ -107,11 +90,7 @@ export default function App() {
           <View style={styles.divider} />
 
           <Image
-            style={{
-              width: Dimensions.get('window').width / 2,
-              height: Dimensions.get('window').width / 2,
-              resizeMode: 'contain',
-            }}
+            style={styles.image}
             source={{ uri: `data:image/jpeg;base64,${tempData}` }}
           />
           <Button
@@ -123,22 +102,8 @@ export default function App() {
           <View style={styles.divider} />
         </View>
 
-        <View
-          style={{
-            width: '100%',
-            paddingVertical: 20,
-            paddingHorizontal: 20,
-            alignItems: 'flex-start',
-            backgroundColor: '#FFE402',
-          }}
-        >
-          <View
-            style={{
-              width: '100%',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}
-          >
+        <View style={styles.lowerContentContainer}>
+          <View style={styles.lowerContentButtons}>
             <Button title="Paste from Clipboard" onPress={() => pasteData()} />
             <Button
               title="Clear Clipboard"
@@ -188,4 +153,35 @@ const styles = StyleSheet.create({
     height: 1,
   },
   bold: { fontWeight: '900' },
+  upperContentContainer: {
+    width: '100%',
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    alignItems: 'flex-start',
+  },
+  textinput: {
+    width: '100%',
+    minHeight: 80,
+    backgroundColor: '#EEEEEE',
+    borderRadius: 10,
+    padding: 10,
+    fontSize: 13,
+  },
+  image: {
+    width: Dimensions.get('window').width / 2,
+    height: Dimensions.get('window').width / 2,
+    resizeMode: 'contain',
+  },
+  lowerContentContainer: {
+    width: '100%',
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    alignItems: 'flex-start',
+    backgroundColor: '#FFE402',
+  },
+  lowerContentButtons: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });

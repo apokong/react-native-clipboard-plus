@@ -50,7 +50,7 @@ This repository includes all parts of Flipper. This includes:
 
 # Getting started
 
-Please refer to our [Getting Started guide](https://fbflipper.com/docs/getting-started/) to set up Flipper.
+Please refer to our [Getting Started guide](https://fbflipper.com/docs/getting-started/index) to set up Flipper.
 
 ## Requirements
 
@@ -121,7 +121,7 @@ Older yarn versions might show an error / hang with the message 'Waiting for the
 
 # Documentation
 
-Find the full documentation for this project at [fbflipper.com](https://fbflipper.com/docs).
+Find the full documentation for this project at [fbflipper.com](https://fbflipper.com/).
 
 Our documentation is built with [Docusaurus](https://docusaurus.io/). You can build
 it locally by running this:

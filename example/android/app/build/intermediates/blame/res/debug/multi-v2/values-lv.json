@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/apokong/Documents/react-native-clipboard-plus/example/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lv/values-lv.xml",
+            "outputFile": "/Users/apokong/Documents/react-native-clipboard-plus-master/example/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-lv/values-lv.xml",
             "map": [
                 {
-                    "source": "/Users/apokong/.gradle/caches/transforms-2/files-2.1/680f99f5a60980a4fb7a012e32eff12d/appcompat-1.1.0/res/values-lv/values-lv.xml",
+                    "source": "/Users/apokong/.gradle/caches/transforms-2/files-2.1/7dca42c052e713f328992d116d98f349/appcompat-1.1.0/res/values-lv/values-lv.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apokong/.gradle/caches/transforms-2/files-2.1/db66a303bf26c4c9c9ee589a595c808c/core-1.1.0/res/values-lv/values-lv.xml",
+                    "source": "/Users/apokong/.gradle/caches/transforms-2/files-2.1/57a7755ec7f8569f8e81b10deb53e9cc/core-1.1.0/res/values-lv/values-lv.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

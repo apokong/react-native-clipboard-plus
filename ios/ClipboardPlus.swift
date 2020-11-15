@@ -1,5 +1,8 @@
 @objc(ClipboardPlus)
 class ClipboardPlus: NSObject {
+    @objc static func requiresMainQueueSetup() -> Bool {
+        return false
+    }
 
     @objc(clearAll:withRejecter:)
     func clearAll(resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {

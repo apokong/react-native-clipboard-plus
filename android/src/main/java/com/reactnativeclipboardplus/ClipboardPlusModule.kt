@@ -21,20 +21,20 @@ class ClipboardPlusModule(reactContext: ReactApplicationContext) : ReactContextB
       // var clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
       // clipboard.clearPrimaryClip()
       // promise.resolve(null)
-      promise.reject("clear function doesn't exist in Android")
+      promise.reject("error","clear function doesn't exist in Android")
     }
 
     @ReactMethod
     fun copyText(text: String, promise: Promise) {
-      promise.reject("copyText function doesn't exist in Android")
+      promise.reject("error","copyText function doesn't exist in Android")
     }
     @ReactMethod
     fun copyUrl(url: String, promise: Promise) {
-      promise.reject("copyUrl function doesn't exist in Android")
+      promise.reject("error","copyUrl function doesn't exist in Android")
     }
     @ReactMethod
     fun copyImage(base64: String, uri: String, promise: Promise) {
-      promise.reject("copyImage function doesn't exist in Android")
+      promise.reject("error","copyImage function doesn't exist in Android")
     }
 
     @ReactMethod
@@ -56,6 +56,6 @@ class ClipboardPlusModule(reactContext: ReactApplicationContext) : ReactContextB
       // }
 
       // promise.resolve(result)
-      promise.reject("paste function doesn't exist in Android")
+      promise.reject("error","paste function doesn't exist in Android")
     }
 }
